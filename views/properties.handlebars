@@ -1,0 +1,69 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/styles/auth.css">
+{{/section}}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/dashboard">Paddy</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="logout-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>      
+  </div>
+</nav>
+
+<div class="container">
+  <form method="POST" action="/properties" class="form-signin">
+    <h2 class="form-signin-heading">Add a Property</h2>
+    
+    {{#if errorMessage}}
+      <div class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+    {{/if}}
+
+    <label for="street" class="sr-only">Street</label>
+    <input type="text" id="inputStreet" name="street" class="form-control" placeholder="123 5th St" required autofocus>
+
+    <label for="city" class="sr-only">City</label>
+    <input type="text" id="inputCity" name="city" class="form-control" placeholder="San Francisco" required autofocus>
+
+    <label for="State" class="sr-only">State</label>
+    <input type="text" id="inputState" name="state" class="form-control" placeholder="CA" required autofocus>
+
+    <label for="country" class="sr-only">Country</label>
+    <input type="text" id="inputCountry" name="country" class="form-control" placeholder="USA" required>
+
+    <label for="zipcode" class="sr-only">Zip Code</label>
+    <input type="text" id="inputZipcode" name="zipcode" class="form-control" placeholder="94121" required autofocus>
+
+    <label for="bedrooms" class="sr-only">Number of Bedrooms</label>
+    <input type="text" id="inputBedrooms" name="bedrooms" class="form-control" placeholder="Number of Bedrooms" required>
+
+    <label for="bathrooms" class="sr-only">Number of Bathrooms</label>
+    <input type="text" id="inputBathrooms" name="bathrooms" class="form-control" placeholder="Number of Bathrooms" required>
+
+    <label for="parking" class="sr-only">Number of Parking Spaces</label>
+    <input type="text" id="inputParking" name="parking" class="form-control" placeholder="Number of Parking Spaces" required>
+
+    <label for="squareFootage" class="sr-only">Total Square Footage</label>
+    <input type="text" id="inputSquareFootage" name="squareFootage" class="form-control" placeholder="Total Square Footage" required>
+
+    <label for="rent" class="sr-only">Total Rent</label>
+    <input type="text" id="inputRent" name="rent" class="form-control" placeholder="Total Rent per Month" required>
+
+    <label for="mortgage" class="sr-only">Mortgage</label>
+    <input type="text" id="inputMortgage" name="mortgage" class="form-control" placeholder="Mortgage per Month" required>
+
+    <label for="tenantOccupancy" class="sr-only">Tenant Occupancy: 3/4</label>
+    <input type="text" id="inputTenentOccupancy" name="tenantOccupancy" class="form-control" placeholder="Tenant Occupancy: 3/4" required>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Create Property</button>
+  </form>
+</div>

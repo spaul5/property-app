@@ -1,0 +1,99 @@
+{{#section 'head'}}
+    <!-- <link rel="stylesheet" href="/styles/auth.css">   -->
+{{/section}}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/dashboard">Paddy</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="logout-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>      
+  </div>
+</nav>
+<br><br>
+
+<div class="container">
+
+  <form method="POST" action="/payment" class="form-signin">
+    
+    <!-- <h2 class="form-signin-heading">Enter Payment Info</h2>   -->
+    
+    {{#if errorMessage}}
+      <div class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+    {{/if}}
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+      <!-- Bootstrap JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <!-- Stripe.js to collect payment details -->
+      <script type="text/javascript" src="https://js.stripe.com/v3/"></script>
+      <!-- Jquery payment library for nicer formatting -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/1.4.1/jquery.payment.js"></script>
+
+    
+     <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <form action="" method="POST" id="payment-form">
+                <div class="payment-errors"></div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Cardholder Name</label>
+                      <input class="form-control input-lg" id="name" data-stripe="name" type="text" placeholder="Jimmy Dean" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Card Number</label>
+                      <input class="form-control input-lg" id="number" type="tel" size="20" data-stripe="number" placeholder="4242 4242 4242 4242" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-3 col-xs-4">
+                    <div class="form-group">
+                      <label>Exp Month</label>
+                      <input class="form-control input-lg" id="exp_month" type="tel" size="2" data-stripe="exp-month" placeholder="01" required>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-4">
+                    <div class="form-group">
+                      <label>Exp Year</label>
+                      <input class="form-control input-lg" id="exp_year" type="tel" size="4" data-stripe="exp-year" placeholder="2020" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-3 col-xs-4">
+                    <div class="form-group pull-right">
+                      <label>CVC</label>
+                      <input class="form-control input-lg" id="cvc" type="tel" size="4" data-stripe="cvc" placeholder="555" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-lg btn-block btn-success submit" type="submit">Pay Rent</button> <!-- change amount to be a db call -->
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </form>
+</div>

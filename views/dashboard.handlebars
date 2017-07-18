@@ -1,0 +1,93 @@
+{{!-- <link rel="stylesheet" href="/styles/auth.css"> --}}
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  
+  <link rel="stylesheet" href="/styles/app.css">
+  
+    
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/dashboard">Paddy</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="logout-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>      
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">Manage Properties<span class="sr-only">(current)</span></a></li>
+        <li><a href="/request">Maintenance Request</a></li>
+        <li><a href="/invite">Invite New Tenant</a></li>
+        <li><br></li>
+        <li><a href="/profitMargin">Financial Chart</a></li>
+        
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">{{load firstname}} {{lastname}}</h1>
+      <h2 class="sub-header">Properties</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Address</th>
+              <th>Rent</th>
+              <th>Mortgage</th>
+              <th>Tenant Occupancy</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {{#each properties}}
+            <tr>
+              <th>{{street}}</th>
+              <th>${{rent}}</th>
+              <th>${{mortgage}}</th>
+              <th>{{tenantOccupancy}}</th>
+              <th><button class="btn btn btn-block btn-success submit" type="submit">Edit</button></th>
+              </tr>
+            {{/each}}
+              <tr>
+                {{!-- <th><h5 class="sub-header"><a href="/properties">Add property</a></h5></th> --}}
+                
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th>  <a href="/properties"><button class="btn btn btn-primary btn-block">Add</button></a></th>
+              </tr>
+
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

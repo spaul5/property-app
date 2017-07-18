@@ -1,0 +1,74 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/dashboard">Patty</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="logout-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>      
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="#">Manage Properties<span class="sr-only">(current)</span></a></li>
+        <li><a href="/request">Maintenance Request</a></li>
+        <li><a href="/properties">Create New Property</a></li>
+        <li><a href="/invite">Invite New Tenant</a></li>
+        <li><a href="/payment">Make a Payment</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Username</h1>
+
+      <h2 class="sub-header">Properties</h2>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>{{custom_title title}}</th>
+              <th>{{author}}</th>
+              <th>Tenant Occupancy</th>
+              <th>{{bedrooms}}</th>
+              <th>{{bathrooms}}</th>
+              <th>Cost of Maintenance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1200 Turk, San Francisco, CA, 9888</th>
+              <th>$2400</th>
+              <th>1/2</th>
+              <th>4</th>
+              <th>2</th>
+              <th>$500</th>
+            </tr>
+            <tr>
+              <th>2800 Turk, San Francisco, CA, 9888</th>
+              <th>$9400</th>
+              <th>5/5</th>
+              <th>10</th>
+              <th>4</th>
+              <th>$100</th>
+            </tr>
+            <tr>
+              <th>3400 Turk, San Francisco, CA, 9888</th>
+              <th>$3400</th>
+              <th>6/6</th>
+              <th>6</th>
+              <th>1.5</th>
+              <th>$0</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+
+{{#section 'head'}}
+    <link rel="stylesheet" href="/styles/auth.css">
+{{/section}}
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/dashboard">Paddy</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a id="logout-link" href="/logout">Logout</a></li>
+      </ul>
+      <form class="navbar-form navbar-right">
+        <input type="text" class="form-control" placeholder="Search...">
+      </form>
+    </div>      
+  </div>
+</nav>
+
+<div class="container">
+  <form method="POST" action="/signup" class="form-signin">
+    <h2 class="form-signin-heading">Maintenance Help</h2>
+    
+    {{#if errorMessage}}
+      <div class="alert alert-danger">
+        {{errorMessage}}
+      </div>
+    {{/if}}
+    
+    <label for="inputMessageTitle" class="sr-only">Maintenance Issue Title </label>
+    <input type="text" id="inputMessageTitle" name="messageTitle" class="form-control" placeholder="Maintenance Issue" required autofocus>
+
+    <label for="inputMessage" class="sr-only">Message</label>
+    <textarea rows="4" cols="50" type="text" id="inputMessage" name="message" class="form-control" style="margin-bottom: 10px;" placeholder="Short description of your request..." required></textarea>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+
+  </div>
+
+    
+
+  </form>
+</div>
